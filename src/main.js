@@ -11,19 +11,20 @@ exports.run = function run (siteName, siteType, url) {
     includeNotices: true,
     includeWarnings: true
   }).then(results => {
+    saveRawData(results, siteName, siteType)
+
     const stats = reporter.stats(results)
     const topIssues = reporter.topIssuesPerGuideline(results, 3)
     const numberOfContrastErrors = reporter.numberOfSpecificIssue(results, 'WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail')
 
-    saveRawData(results, siteName)
     sendStats(siteName, siteType, stats, topIssues, numberOfContrastErrors)
   }).catch(err => {
     console.error(err)
   })
 }
 
-function saveRawData (data, siteName) {
-  fs.writeFileSync('reports/' + siteName + '.json', JSON.stringify(data, null, 4) + '\n')
+function saveRawData (data, siteName, siteType) {
+  fs.writeFileSync(`reports/${siteName}_${siteType}.json`, JSON.stringify(data, null, 4) + '\n')
 }
 
 function sendStats (siteName, siteType, stats, topIssues, numberOfContrastErrors) {

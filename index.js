@@ -20,14 +20,14 @@ const URLS = {
   }
 }
 
-const pa11yQueue = async.queue((task, cb) => {
+const queue = async.queue((task, cb) => {
   console.log(`Start ${task.url}`)
   main.run(task.site, task.type, task.url).then(() => {
     cb(task.url)
   })
 }, 3)
 
-pa11yQueue.drain = () => {
+queue.drain = () => {
   console.log('All tests finished.')
 }
 
@@ -39,6 +39,6 @@ const doneCallback = (url) => {
 
 for (let site in URLS) {
   for (let type in URLS[site]) {
-    pa11yQueue.push({site, type, url: URLS[site][type]}, doneCallback)
+    queue.push({site, type, url: URLS[site][type]}, doneCallback)
   }
 }
