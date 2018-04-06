@@ -23,7 +23,7 @@ exports.run = function run (siteName, siteType, url) {
 }
 
 function saveRawData (data, siteName) {
-  fs.writeFileSync('report_' + siteName + '.json', JSON.stringify(data, null, 4) + '\n')
+  fs.writeFileSync('reports/' + siteName + '.json', JSON.stringify(data, null, 4) + '\n')
 }
 
 function sendStats (siteName, siteType, stats, topIssues, numberOfContrastErrors) {
