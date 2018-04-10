@@ -33,14 +33,12 @@ function sendStats (siteName, siteType, stats, topIssues, numberOfContrastErrors
   const client = graphite.createClient('plaintext://sitespeed.zeit.de:2003/')
 
   const metrics = {
-    test: {
-      a11y: {
-        [siteName]: {
-          [siteType]: {
-            stats,
-            topIssues,
-            'numberOfContrastErrors': numberOfContrastErrors
-          }
+    a11y: {
+      [siteName]: {
+        [siteType]: {
+          stats,
+          topIssues,
+          'numberOfContrastErrors': numberOfContrastErrors
         }
       }
     }
