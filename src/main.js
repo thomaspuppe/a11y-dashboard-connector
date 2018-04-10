@@ -9,7 +9,13 @@ exports = module.exports = {}
 exports.run = function run (siteName, siteType, url) {
   return pa11y(url, {
     includeNotices: true,
-    includeWarnings: true
+    includeWarnings: true,
+    chromeLaunchConfig: {
+        args: [
+            '--no-sandbox',
+            '--disable-setuid-sandbox'
+        ]
+    }
   }).then(results => {
     saveRawData(results, siteName, siteType)
 
