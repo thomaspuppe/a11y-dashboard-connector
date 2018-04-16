@@ -10,11 +10,13 @@ exports.run = function run (siteName, siteType, url) {
   return pa11y(url, {
     includeNotices: true,
     includeWarnings: true,
+    wait: 3000,
+    timeout: 60000,
     chromeLaunchConfig: {
-        args: [
-            '--no-sandbox',
-            '--disable-setuid-sandbox'
-        ]
+      args: [
+        '--no-sandbox',
+        '--disable-setuid-sandbox'
+      ]
     }
   }).then(results => {
     saveRawData(results, siteName, siteType)
