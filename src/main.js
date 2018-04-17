@@ -11,10 +11,10 @@ exports.run = function run (siteName, siteType, url) {
     includeNotices: true,
     includeWarnings: true,
     chromeLaunchConfig: {
-        args: [
-            '--no-sandbox',
-            '--disable-dev-shm-usage'
-        ]
+      args: [
+        '--no-sandbox',
+        '--disable-dev-shm-usage'
+      ]
     }
   }).then(results => {
     saveRawData(results, siteName, siteType)
