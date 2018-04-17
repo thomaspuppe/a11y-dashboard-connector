@@ -8,13 +8,17 @@
     "schedule": "*/10 * * * *",
     "jobTemplate": {
       "spec": {
-        "containers": [
-          {
-            "name": "a11y-dashbord-connector",
-            "image": "registry.k8s.zeit.de/a11y-dashbord-connector:v0.1"
+        "template": {
+          "spec": {
+            "containers": [
+              {
+                "name": "a11y-dashbord-connector",
+                "image": "registry.k8s.zeit.de/a11y-dashbord-connector:v0.1"
+              }
+            ],
+            "restartPolicy": "OnFailure"
           }
-        ],
-        "restartPolicy": "OnFailure"
+        }
       }
     }
   }
