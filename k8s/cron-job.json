@@ -1,0 +1,21 @@
+{
+  "apiVersion": "batch/v1beta1",
+  "kind": "CronJob",
+  "metadata": {
+    "name": "pa11y",
+  },
+  "spec": {
+    "schedule": "*/10 * * * *",
+    "jobTemplate": {
+      "spec": {
+        "containers": [
+          {
+            "name": "pa11y",
+            "image": "registry.k8s.zeit.de/pa11y:v0.1"
+          }
+        ],
+        "restartPolicy": "OnFailure"
+      }
+    }
+  }
+}

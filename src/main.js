@@ -16,6 +16,7 @@ exports.run = function run (siteName, siteType, url) {
       args: [
         '--no-sandbox',
         '--disable-setuid-sandbox'
+        '--disable-dev-shm-usage'
       ]
     }
   }).then(results => {
