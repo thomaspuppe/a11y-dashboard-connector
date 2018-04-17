@@ -13,6 +13,15 @@ Run competetive Accessibility tests and send them to a Graphite db
 - `sendStats` glues the values together into an objext, which is sent to Graphite.
   - The object structure and the key names represent the hierarchy in which you will find the data inside Graphite.
 
+## Run & Deploy
+
+| Command | What's happening? |
+| ------  | --------- |
+| `make build` | generate new Docker-Image with current revision |
+| `make test`  | run most recent Docker-Image based on revision  |
+| `make k8s`   | deploy most recent Docker-Image based on revision to Kubernetes-Cluster as a Cronjob|
+
+The Cronjob is accessible through the [Kubernetes-Dashboard](http://217.13.69.11:8080/r/projects/1a5/kubernetes-dashboard:9090/#!/cronjob?namespace=default) (view logs etc.)
 
 ## To-do
 
