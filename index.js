@@ -14,9 +14,9 @@ const URLS = {
     'ressort': 'https://www.welt.de/politik/'
   },
   'zeit-de': {
-    'homepage': 'http://www.zeit.de/index',
-    'article': 'http://www.zeit.de/politik/ausland/2018-04/james-comey-donald-trump-fbi-ermittlungen-russlandaffaere',
-    'ressort': 'http://www.zeit.de/politik/index'
+    'homepage': 'https://www.zeit.de/index',
+    'article': 'https://www.zeit.de/politik/ausland/2018-04/james-comey-donald-trump-fbi-ermittlungen-russlandaffaere',
+    'ressort': 'https://www.zeit.de/politik/index'
   }
 }
 
