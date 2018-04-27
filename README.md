@@ -7,8 +7,8 @@ Run competetive Accessibility tests and send them to a Graphite db
 - The `index.js` only itereates over a list of urls and "queues" them async to `run`.
 - The `run` function in `main.js` runs pa11y for each URL and pa11y returns a report (big array of issues)
   - The report is saved as JSON file into the `reports` folder
-  - The report is filtered by different "reporters" (their wording, I would call it "filters")
-  - Each filter returns one or multiple values.
+  - The report is processed by different filters
+  - Each filter takes a pa11y report as input and returns one or multiple values (calculated/filtered data).
 - The values are put to the function `sendStats`.
 - `sendStats` glues the values together into an objext, which is sent to Graphite.
   - The object structure and the key names represent the hierarchy in which you will find the data inside Graphite.
@@ -28,10 +28,8 @@ The Cronjob is accessible through the [Kubernetes-Dashboard](http://217.13.69.11
 ## Clean up
 
 - `index.js` is a lot of unreadable boilerplate.
-- naming things: "filter" instead of "reporter"
 - naming things: make clear which part is pa11y, which is grafana-connection, which are _our_ filters, which is code to tape things together
 - send each report result to Graphite, instead of glueing it together in the `sendStats` function
-- extract reporters/filters into individual files
 
 ## Make this usable for others
 

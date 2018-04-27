@@ -2,7 +2,9 @@ const pa11y = require('pa11y')
 const fs = require('fs')
 const graphite = require('graphite')
 
-const reporter = require('./reporter')
+const statsFilter = require('./filters/stats')
+const topIssuesPerGuidelineFilter = require('./filters/topIssuesPerGuideline')
+const numberOfSpecificIssueFilter = require('./filters/numberOfSpecificIssue')
 
 exports = module.exports = {}
 
@@ -22,9 +24,9 @@ exports.run = function run (siteName, siteType, url) {
   }).then(results => {
     saveRawData(results, siteName, siteType)
 
-    const stats = reporter.stats(results)
-    const topIssues = reporter.topIssuesPerGuideline(results, 3)
-    const numberOfContrastErrors = reporter.numberOfSpecificIssue(results, 'WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail')
+    const stats = statsFilter(results)
+    const topIssues = topIssuesPerGuidelineFilter(results, 3)
+    const numberOfContrastErrors = numberOfSpecificIssueFilter(results, 'WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail')
 
     sendStats(siteName, siteType, stats, topIssues, numberOfContrastErrors)
   }).catch(err => {

@@ -1,18 +1,3 @@
-exports = module.exports = {}
-
-/**
- * Get the error, notice and warning statistics for a given pa11y result
- *
- * @param {object} The pa11y results
- * @returns {object} Object containing errorCount, warningCount and noticeCount
- */
-exports.stats = results => {
-  return {
-    errorCount: results.issues.filter(issue => issue.type === 'error').length,
-    warningCount: results.issues.filter(issue => issue.type === 'warning').length,
-    noticeCount: results.issues.filter(issue => issue.type === 'notice').length
-  }
-}
 
 /**
  * Get the top n guidelines with the most issues (warning, error or notice)
@@ -22,7 +7,7 @@ exports.stats = results => {
  * @param {number} count Maximum number of guidelines to return
  * @returns {Map} A sorted map of the top n issues
  */
-exports.topIssuesPerGuideline = (results, top) => {
+module.exports = (results, top) => {
   const guidelineMap = new Map()
 
   results.issues.forEach(issue => {
@@ -54,16 +39,4 @@ exports.topIssuesPerGuideline = (results, top) => {
 
   const strMap = new Map(sortedGuidelines.slice(0, top))
   return strMapToObj(strMap)
-}
-
-/**
- * Get the top n guidelines with the most issues (warning, error or notice)
- * for the given pa11y results.
- *
- * @param {object} results The pa11y results
- * @param {string} issueString Pa11y code of the issue to be counted
- * @returns {Integer} Number of found issues
- */
-exports.numberOfSpecificIssue = (results, issueString) => {
-  return results.issues.filter(issue => issue.code === issueString).length
 }
