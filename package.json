@@ -5,19 +5,19 @@
   "author": "Valentin von Guttenberg <greengiraffe@posteo.de>",
   "license": "MIT",
   "dependencies": {
-    "async": "^2.6.0",
+    "async": "^2.6.1",
     "graphite": "^0.1.2",
-    "pa11y": "^5.0.3"
+    "pa11y": "^5.0.4"
   },
   "scripts": {
     "start": "node index.js"
   },
   "devDependencies": {
-    "eslint": "^4.19.1",
+    "eslint": "^5.0.1",
     "eslint-config-standard": "^11.0.0",
-    "eslint-plugin-import": "^2.11.0",
+    "eslint-plugin-import": "^2.13.0",
     "eslint-plugin-node": "^6.0.1",
-    "eslint-plugin-promise": "^3.7.0",
+    "eslint-plugin-promise": "^3.8.0",
     "eslint-plugin-standard": "^3.1.0"
   }
 }
