@@ -33,7 +33,8 @@ The Cronjob is accessible through the [Kubernetes-Dashboard](http://217.13.69.11
 
 ## Make this usable for others
 
-- The list of urls should come from a config file
+- The list of urls should come from a config file!
+  - how to abstract the site-type (hp, centerpage, article) away??
 - Command Line Interface (params: which sites, graphite url)
 
 

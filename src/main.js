@@ -41,7 +41,7 @@ function saveRawData (data, siteName, siteType) {
 function sendStats (siteName, siteType, stats, topIssues, numberOfContrastErrors) {
   console.log(stats)
 
-  const client = graphite.createClient('plaintext://sitespeed.zeit.de:2003/')
+  //const client = graphite.createClient('plaintext://sitespeed.zeit.de:2003/')
 
   const metrics = {
     a11y: {
@@ -55,10 +55,12 @@ function sendStats (siteName, siteType, stats, topIssues, numberOfContrastErrors
     }
   }
 
-  client.write(metrics, function (error) {
+  console.log(metrics)
+
+  /*client.write(metrics, function (error) {
     if (typeof error !== 'undefined') {
       console.error(error)
     }
   })
-  client.end()
+  client.end()*/
 }

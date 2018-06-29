@@ -2,21 +2,21 @@ const main = require('./src/main')
 const async = require('async')
 
 const URLS = {
-  'spiegel-de': {
-    'homepage': 'http://www.spiegel.de/',
-    'article': 'http://www.spiegel.de/politik/deutschland/steinmeier-empfaengt-schulz-merkels-hoffnungstraeger-a-1179786.html',
-    'ressort': 'http://www.spiegel.de/politik/'
+  'berliner-philharmoniker': {
+    'homepage': 'https://www.berliner-philharmoniker.de/',
+    'centerpage': 'https://www.berliner-philharmoniker.de/konzerte/kalender/',
+    'detailpage': 'https://www.berliner-philharmoniker.de/konzerte/kalender/details/51178/'
   },
 
-  'welt-de': {
-    'homepage': 'https://www.welt.de/',
-    'article': 'https://www.welt.de/politik/deutschland/article170905545/Doppelspitze-der-Alphatiere.html',
-    'ressort': 'https://www.welt.de/politik/'
+  'digitalconcerthall': {
+    'homepage': 'https://www.digitalconcerthall.com/',
+    'centerpage': 'https://www.digitalconcerthall.com/en/concerts',
+    'detailpage': 'https://www.digitalconcerthall.com/en/concert/51130'
   },
-  'zeit-de': {
-    'homepage': 'https://www.zeit.de/index',
-    'article': 'https://www.zeit.de/politik/ausland/2018-04/james-comey-donald-trump-fbi-ermittlungen-russlandaffaere',
-    'ressort': 'https://www.zeit.de/politik/index'
+  'berliner-philharmoniker-recordings': {
+    'homepage': 'https://www.berliner-philharmoniker-recordings.com/',
+    'centerpage': 'https://www.berliner-philharmoniker-recordings.com/audio.html',
+    'detailpage': 'https://www.berliner-philharmoniker-recordings.com/john-adams-edition.html'
   }
 }
 
