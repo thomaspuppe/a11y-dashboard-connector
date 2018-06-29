@@ -20,7 +20,11 @@ const URLS = {
   }
 }
 
-const queue = async.queue((task, cb) => {
+// ********************************************************************
+// pa11y
+// ********************************************************************
+
+/*const queue = async.queue((task, cb) => {
   console.log(`Start ${task.url}`)
   main.run(task.site, task.type, task.url).then(() => {
     cb(task.url)
@@ -42,3 +46,14 @@ for (let site in URLS) {
     queue.push({site, type, url: URLS[site][type]}, doneCallback)
   }
 }
+*/
+
+// ********************************************************************
+// HTML Validator
+// ********************************************************************
+
+const htmlValidatorCheck = require('./src/checks/html-validator/check')
+const url = 'https://www.berliner-philharmoniker-recordings.com/';
+htmlValidatorCheck.run('bphil', 'homepage', url).then(() => {
+	console.log(`Finished html-validator check for ${url}`)
+})

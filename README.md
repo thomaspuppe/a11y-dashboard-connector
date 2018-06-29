@@ -42,3 +42,13 @@ The Cronjob is accessible through the [Kubernetes-Dashboard](http://217.13.69.11
 
 - axe for analyses: reports good parse-able advice (Violation of "color-contrast" with 108 occurrences!)
 - exclude elements like ads (look for "hide elements" in https://bitsofco.de/pa11y/) ... if this makes sense. Maybe as an extra report: issues with and without ads ?
+
+
+## akuter Plan
+
+- Unterstützung von verschiedenen "Checks" (pa11y, lighthouse, html-validator), die jeweils
+  - eine URL und ein paar Metadaten(??) bekommen ()
+  - testen, mit eigenen Filtern im Hintergrund die Ergebnnisse formen
+  - und ein definiertes Format zurückliefern, das der Hub (_dafür das ganze Projekt umbenennen_) irgendwohin füttert.
+  - das _irgendwohin_ könnte auch ein flexibler Adapter sein? Der den Austausch von Graphite gegen Google Spreadsheets oder anderen Quatsch erlaubt.
+  - "nebenbei" pa11y umsortieren, damit der auch ein eigener Check in eigenem Folder wird.
