@@ -4,9 +4,15 @@
   "main": "index.js",
   "author": "Valentin von Guttenberg <greengiraffe@posteo.de>",
   "contributors": [
-    {"name": "Valentin von Guttenberg",  "email": "greengiraffe@posteo.de"},
-    {"name": "Thomas Puppe",  "email": "info@thomaspuppe.de"}
-  ]
+    {
+      "name": "Valentin von Guttenberg",
+      "email": "greengiraffe@posteo.de"
+    },
+    {
+      "name": "Thomas Puppe",
+      "email": "info@thomaspuppe.de"
+    }
+  ],
   "license": "MIT",
   "dependencies": {
     "async": "^2.6.1",
@@ -21,7 +27,7 @@
     "eslint": "^5.1.0",
     "eslint-config-standard": "^11.0.0",
     "eslint-plugin-import": "^2.13.0",
-    "eslint-plugin-node": "^6.0.1",
+    "eslint-plugin-node": "^7.0.0",
     "eslint-plugin-promise": "^3.8.0",
     "eslint-plugin-standard": "^3.1.0"
   }
