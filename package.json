@@ -18,7 +18,8 @@
     "async": "^2.6.1",
     "graphite": "^0.1.2",
     "html-validator": "^3.0.5",
-    "pa11y": "^5.0.4"
+    "pa11y": "^5.0.4",
+    "webcoach": "^2.0.6"
   },
   "scripts": {
     "start": "node index.js"
