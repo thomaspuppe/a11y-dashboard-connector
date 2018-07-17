@@ -54,6 +54,16 @@ for (let site in URLS) {
 
 const htmlValidatorCheck = require('./src/checks/html-validator/check')
 const url = 'https://www.berliner-philharmoniker-recordings.com/';
-htmlValidatorCheck.run('bphil', 'homepage', url).then(() => {
+htmlValidatorCheck.run('bphrec', 'homepage', url).then(() => {
 	console.log(`Finished html-validator check for ${url}`)
+})
+
+// ********************************************************************
+// Webcoach Scores
+// ********************************************************************
+
+const webcoachCheck = require('./src/checks/webcoach/check')
+const url2 = 'https://www.berliner-philharmoniker-recordings.com/';
+webcoachCheck.run('bphrec', 'homepage', url2).then(() => {
+	console.log(`Finished webcoach check for ${url}`)
 })
